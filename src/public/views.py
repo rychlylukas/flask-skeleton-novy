@@ -39,7 +39,10 @@ def masof():
 
 @blueprint.route('/ocformular', methods=['GET','POST'])
 def ocapp():
-    form=ocform()
+    form = ocform()
     if form.validate_on_submit():
-        return "OK"
+        if form.obrazec.data == "1":
+            from math import pow
+            prom = str(pow(form.a.data, 2))
+            return render_template("public/ocvystup.tmpl", prom=prom)
     return render_template("public/ocformular.tmpl", form=form)

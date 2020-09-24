@@ -39,7 +39,7 @@ class LogUserForm(Form):
     pohlavi = BooleanField('Pohlavi')
 
 class secti(Form):
-    hodnota1 = IntegerField("vlozHodnotu1", validators=[InputRequired(message="vyzadovano1")])
+    hodnota1 = IntegerField("vlozHodnotu1", validators=[InputRequired(message="vyzadovano")])
     hodnota2 = IntegerField("vlozHodnotu2", validators=[InputRequired(message="vyzadovano")])
 class masoform(Form):
     typ=SelectField('Typ', choices=[(1, "Hovezi"), (2, "Veprove")], default=2)
@@ -47,6 +47,6 @@ class masoform(Form):
 class ocform(Form):
     a = FloatField("Strana a:", validators=[InputRequired(message="vyzadovano")])
     b = FloatField("Strana b:", validators=[InputRequired(message="vyzadovano")])
-    obrazec = SelectField("Obrazec", choices=[(1, "Ctverec a"),\
-                                              (2, "Obdelnik ab"),\
-                                              (3, "Trojuhelnik abc")], default=1)
+    obrazec = SelectField("Obrazec", choices=[("1", "Ctverec a"),\
+                                              ("2", "Obdelnik ab"),\
+                                              ("3", "Trojuhelnik abc")], default=1)
