@@ -39,7 +39,7 @@ class LogUserForm(Form):
     pohlavi = BooleanField('Pohlavi')
 
 class secti(Form):
-    hodnota1 = IntegerField("vlozHodnotu1", validators=[InputRequired(message="vyzadovano")])
+    hodnota1 = IntegerField("vlozHodnotu1", validators=[InputRequired(message="vyzadovano1")])
     hodnota2 = IntegerField("vlozHodnotu2", validators=[InputRequired(message="vyzadovano")])
 class masoform(Form):
     typ=SelectField('Typ', choices=[(1, "Hovezi"), (2, "Veprove")], default=2)
